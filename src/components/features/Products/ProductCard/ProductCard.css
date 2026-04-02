@@ -32,7 +32,7 @@
     justify-content: center;
     align-items: center;
     gap: var(--spacing__lg);
-    background: url("./images/product card.png") center/contain no-repeat
+    background: url("/images/product card.png") center/contain no-repeat
 }
 
 .product__card__img__container {

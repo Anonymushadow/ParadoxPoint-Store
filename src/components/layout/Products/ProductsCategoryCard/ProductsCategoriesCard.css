@@ -5,7 +5,7 @@
 
 .category__card {
     aspect-ratio: 277.44/166.18;
-    background: url("./images/categories/category background.png") 0 0/cover;
+    background: url("/images/categories/category background.png") 0 0/cover;
     filter: drop-shadow(0 0 30px #fff);
     width: 277.44px;
     height: 166.18px;
