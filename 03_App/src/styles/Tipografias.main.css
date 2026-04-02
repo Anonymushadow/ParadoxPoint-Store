@@ -1,0 +1,45 @@
+* {
+    font-family: var(--font__primary);
+}
+
+h1, h2 {
+    font-family: var(--font__secondary);
+}
+
+h1 {
+    font-size: var(--fs__title__xl);
+    margin: 0;
+}
+
+h2 {
+    font-size: calc(var(--fs__title__md) * 1.5);
+}
+
+h3 {
+    font-size: var(--fs__highlight);
+}
+
+h4 {
+    font-size: var(--fs__highlight);
+}
+
+h5 {
+    font-size: var(--fs__highlight);
+}
+
+h6 {
+    font-size: var(--fs__detail);
+}
+
+p, a {
+    font-size: var(--fs__text);
+}
+
+label {
+    font-size: var(--fs__highlight);
+    display: inline-block;
+}
+
+button {
+    font-size: var(--fs__highlight);
+}

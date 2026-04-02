@@ -1,0 +1,32 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing__xl) * 4);
+    padding: 0 var(--spacing__sm) calc(var(--spacing__xl) * 4) var(--spacing__sm);
+}
+
+.products__cards__section__home,
+.categories__cards__section__home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 67px;
+}
+
+.products__cards__section__home__title,
+.categories__cards__section__home__title {
+    font-family: var(--font__secondary);
+    color: var(--azul__v3);
+    font-weight: bold;
+}
+
+.home__glitch__section {
+    padding: 0;
+}
+
+@media screen and (max-width:700px) {
+    .home {
+        gap: var(--spacing__xl);
+        padding: var(--spacing__xl) var(--spacing__sm)
+    }
+}

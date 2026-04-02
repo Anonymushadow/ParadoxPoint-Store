@@ -1,0 +1,65 @@
+.product__card__scene {
+    perspective: 1000px;
+    width: 225px
+}
+
+.product__card__scene:hover .product__card {
+    transform: rotateY(180deg)
+}
+
+.product__card {
+    height: 317px;
+    min-width: 225px;
+    aspect-ratio: 225/317;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .8s;
+    cursor: pointer;
+    background: 0 0
+}
+
+.product__card__back,
+.product__card__front {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden
+}
+
+.product__card__front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing__lg);
+    background: url("./images/product card.png") center/contain no-repeat
+}
+
+.product__card__img__container {
+    width: 68%;
+    aspect-ratio: 1/1;
+    margin-left: 4px;
+    margin-top: 10px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.product__card__name__container {
+    width: 80%;
+    height: 15%;
+    margin-left: 4px;
+    margin-top: 5px;
+    color: var(--azul__v4);
+    font-weight: 700;
+    font-family: var(--font__primary);
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.product__card__back {
+    transform: rotateY(180deg);
+    background-size: cover;
+    background-repeat: no-repeat
+}

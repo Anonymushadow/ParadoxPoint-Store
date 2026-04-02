@@ -1,0 +1,7 @@
+.products__cards__section {
+    width: 100%;
+    display: flex;
+    gap: calc(var(--spacing__lg) + var(--spacing__lg)) var(--spacing__lg);
+    flex-wrap: wrap;
+    justify-content: space-evenly
+}

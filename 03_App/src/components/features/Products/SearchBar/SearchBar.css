@@ -1,0 +1,59 @@
+.searchbar__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--spacing__lg);
+    margin: calc(var(--spacing__xl) * 2) 0 calc(var(--spacing__xl) * 2) 0
+}
+
+.searchbar__content {
+    position: relative;
+    width: 100%;
+    max-width: 504px;
+    display: flex
+}
+
+.searchbar__name {
+    color: var(--azul__v3);
+    text-shadow: -2px 4px 4px rgb(0, 160, 216, .25)
+}
+
+.searchbar {
+    width: 100%;
+    height: 37px;
+    border: 1px solid;
+    outline: 0;
+    padding: var(--spacing__sm) var(--spacing__md);
+    border-radius: 5px;
+    background: rgb(0, 160, 216, .25);
+    box-shadow: 0 0 20px rgb(68, 170, 250, .5), inset 0 0 12px rgb(68, 170, 250, .5);
+    color: var(--neutro__v1);
+    transition: .5s;
+    position: relative
+}
+
+.searchbar:focus {
+    box-shadow: 0 0 30px rgb(250, 250, 250, .9), inset 0 0 12px rgb(68, 170, 250, .5);
+    text-shadow: 0 0 40px #fff
+}
+
+.searchbar::placeholder {
+    color: var(--neutro__v1);
+    font-weight: 700
+}
+
+.searchbar__img__container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 37px;
+    aspect-ratio: 1/1
+}
+
+@media screen and (max-width:500px) {
+    .searchbar__name {
+        font-size: clamp(23px, calc(-1.6px + 4.8vw), 37px)
+    }
+}

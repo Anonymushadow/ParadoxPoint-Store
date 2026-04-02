@@ -1,0 +1,95 @@
+/* Tipografias */
+:root {
+    --fs__title__xl: clamp(2rem, 2.5vw + 1.45rem, 3.875rem);
+    --fs__title__md: clamp(1.375rem, 1.2vw + 1.1rem, 1.75rem);
+    --fs__highlight: clamp(1.125rem, 0.9vw + 0.95rem, 1.375rem);
+    --fs__text: clamp(1rem, 0.5vw + 0.9rem, 1.125rem);
+    --fs__detail: clamp(0.875rem, 0.3vw + 0.8rem, 0.9375rem);
+
+    --font__primary: "Space Grotesk", system-ui, sans-serif;
+    --font__secondary: "Rajdhani", system-ui, sans-serif;
+}
+
+/* Colores Light */
+:root {
+    /* Colores */
+    --azul__v0: #09152A;
+    --azul__v1: #4E89D2;
+    --azul__v2: #00A0D8;
+    --azul__v3: #44AAFA;
+    --azul__v4: #6CD1DA;
+
+    --neutro__v1: #D8E1E8;
+    --neutro__v2: #8D8D8D;
+    --neutro__v3: #0F1419;
+    --neutro__v4: #000405;
+
+    --cta: #7B5CFF;
+    --DWC__color: #4e0789;
+}
+
+/* Espaciados */
+:root {
+  --spacing__xs: 0.5rem;  /* 8 */
+  --spacing__sm: 1rem;   /* 16 */
+  --spacing__md: 1.5rem; /* 24 */
+  --spacing__lg: 2.5rem; /* 40 */
+  --spacing__xl: 4rem;   /* 64 */
+
+  --spacing__section: clamp(4rem, 12vw, 18rem);   /* 64 → ~300 */
+  --spacing__block: clamp(2rem, 6vw, 6rem);       /* 32 → 96 */
+  --spacing__stack: clamp(1.25rem, 3vw, 4rem);    /* 20 → 64 */
+}
+
+/* Sombras */
+:root {
+    /* Shadows */
+    --shadow__light: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow__medium: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    --shadow__dark: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/*Bordes*/
+:root {
+    /* Borders */
+    --border-radius__sm: .25rem;
+    --border-radius__md: .5rem;
+    --border-radius__lg: .9rem;
+    --border-radius__full: 50%;
+}
+
+/* Transiciones */
+:root {
+    /* Transitions */
+    --transition__fast: .2s ease-in-out;
+    --transition__normal: .3s ease-in-out;
+    --transition__slow: .5s ease-in-out;
+}
+
+/* Opacidad */
+:root {
+    /* Opacity */
+    --opacity__disabled: .5;
+    --opacity__hover: .85;
+}
+
+/* Z-Index */
+:root {
+    /* Z-Index */
+    --z-index__base: 1;
+    --z-index__modal: 1000;
+    --z-index__tooltip: 2000;
+}
+
+/* Tamaños varios */
+:root {
+    /* Sizes */
+    --max-width__content: 90vw;
+    --line-height__base: 1.6;
+}
+
+@media (min-width: 769px) {
+    :root {
+        --line-height__base: 1.8;
+    }
+}

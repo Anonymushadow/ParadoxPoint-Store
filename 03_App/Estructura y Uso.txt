@@ -1,0 +1,147 @@
+📁 Proyect folder/
+├──    📁 public/
+|        └── 📁 images/
+|        └── 📁 videos/
+|        └── 📁 icons/
+|        └── favicon.ico
+|        
+|    📁 src/
+|    │
+|    ├── 📁 store/
+|    │   ├── store.js
+|    │   └── rootReducer.js   (opcional si querés separar rootReducer)
+|    │
+|    ├── 📁 slices/
+|    │   ├── userSlice.js
+|    │   ├── uiSlice.js
+|    │   ├── authSlice.js
+|    │   └── etc...
+|    |
+|    ├── 📁 components/
+|    |    ├── 📁 effects/
+|    │    |  ├── 📁 ScrollToTop/
+|    │    |  └── etc...
+|    |    |
+|    |    ├── 📁 features/
+|    |    |   ├── 📁 Login/
+|    |    │   │   ├── LoginForm.jsx
+|    |    │   │   ├── LoginForm.css
+|    |    │   │   └── index.js
+|    |    │   ├── 📁 Dashboard/
+|    |    │   │   ├── Dashboard.jsx
+|    |    │   │   ├── Dashboard.css
+|    |    │   │   └── index.js
+|    |    │   └── etc...
+|    |    |
+|    │    ├── 📁 feedback/
+|    │    │   ├── 📁 Loader/
+|    │    │   ├── 📁 Toast/
+|    │    │   └── etc...
+|    |    |
+|    │    ├── 📁 layout/
+|    │    │   ├── 📁 Navbar/
+|    │    │   │   ├── Navbar.jsx
+|    │    │   │   ├── Navbar.css
+|    │    │   │   └── index.js
+|    │    │   ├── 📁 Footer/
+|    │    │   |   ├── Footer.jsx
+|    │    │   |   ├── Footer.css
+|    │    │   |   └── index.js
+|    │    │   └── etc...
+|    |    |
+|    |    └── 📁 ui/
+|    │        ├── 📁 Button/
+|    │        │   ├── Button.jsx
+|    │        │   ├── Button.css
+|    │        │   └── index.js
+|    │        ├── 📁 Input/
+|    │        │   ├── Input.jsx
+|    │        │   ├── Input.css
+|    │        │   └── index.js
+|    │        └── 📁 RadioButton/
+|    │        |   ├── RadioButton.jsx
+|    │        |   ├── RadioButton.css
+|    │        |   └── index.js
+|    │        └── etc... 
+|    |
+|    ├── 📁 config/
+|    │   └── firebase.config.js
+|    |   └── etc
+|    │
+|    ├── 📁 contexts/
+|    |
+|    ├── 📁 hooks/
+|    |
+|    ├── 📁 modules/
+|    |   ├── 📁 firebase/
+|    |
+|    ├── 📁 pages/
+|    │   ├── 📁 Home/
+|    │   │   ├── Home.jsx
+|    │   │   ├── Home.css
+|    │   │   └── index.js
+|    │   ├── 📁 About/
+|    │   └── etc...
+|    |
+|    ├── 📁 routes/
+|    │   └── router.js
+|    |
+|    ├── 📁 styles/
+|    │   └── Reset.main.css
+|    │   └── Normalize.main.css
+|    │   └── Variables.main.css
+|    │   └── Layout.main.css
+|    |   └── Tipografias.main.css
+|    |   └── styles.main.js
+|    │
+|    ├── App.js
+|    └── index.js
+|
+├──    .gitignore
+├──    eslint.config.js
+├──    index.html
+├──    jsconfig.json
+├──    package.json
+├──    Readme.txt
+└──    vite.config.js
+
+
+================================================================================================================
+USOS DE CADA DOCUMENTO
+================================================================================================================
+📁 Proyect folder => Carpeta principal del proyecto, aca esta toda la app
+📁 public/ => Carpeta para lo audiovisual
+📁 images/ => imagenes estaticas
+📁 videos/ => videos estaticos
+📁 icons/ => iconos mediante fotos
+favicon.ico => icono de la pagina
+📁 src/ => Carpeta que contendra los archivos principales
+📁 components/ => Componentes reutilizables de la pagina
+📁 effects/ => Efectos visuales para la pagina (como glitch, movimientos, etc)
+📁 ScrollToTop/ => Componente que hace que al cambiar de pagina te posicione arriba de todo en la misma
+📁 features/ => Partes de una pagina (como home-header, home-about, home-contact, etc)
+📁 feedback/ => Mensajes del sistema (como pop-ups, mensajes de error, etc)
+📁 layout/ => Pedazos del layout general como un footer o un navbar que siempre estan sin importar la pagina actual
+📁 ui/ => Componentes basicos como botones, inputs, etc
+📁 config/ => Configuraciones generales como bases de datos, backends, etc
+📁 contexts/ => Contextos para compartir datos entre componentes
+📁 hooks/ => Hooks para obtener datos de los contextos
+📁 modules/ => Modulos que ejecutan logica pero no devuelven componentes
+📁 firebase/ => Archivos con peticiones / queries para firebase
+📁 pages/ => Paginas que ejecutan sus respectivos features
+📁 routes/ => Archivos para manejar la navegacion
+router.js => Manejo de rutas
+📁 styles/ => Estilos css base
+Reset.main.css => Reseteo de estilos por defecto de los navegadores
+Normalize.main.css => Normalizacion de diferencias entre navegadores manteniendo los estilos utiles por defecto
+Variables.main.css => Variables css para utilizar en todos lados 
+Layout.main.css => Estilos base para el layout
+Tipografias.main.css => Estilos base para tipografias
+styles.main.js => Archivo que importa todos los css base de una 
+.gitignore => Archivo que especifica que cosas no se subiran a github
+eslint.config.js => Archivo para configurar eslint
+index.html => Archivo principal que se ejecutara
+jsconfig.json => Archivo que contendra informacion sobre los paquetes instalados
+package.json => Archivo que indica que paquetes instalaremos
+Readme.txt => Archivo donde explico como adaptar este proyecto base al tuyo
+vite.config.js => Configuracion para correr vite

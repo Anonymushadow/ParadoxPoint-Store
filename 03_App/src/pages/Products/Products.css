@@ -1,0 +1,6 @@
+.products {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing__xl);
+    padding: var(--spacing__xl) var(--spacing__sm) calc(var(--spacing__xl) * 4) var(--spacing__sm)
+}

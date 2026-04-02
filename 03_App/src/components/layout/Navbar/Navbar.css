@@ -1,0 +1,357 @@
+.navbar__content__link__cart__button::after,
+.navbar__content__link__cart__button:hover .navbar__content__link__cart__button__icon {
+    filter: drop-shadow(0 0 5px var(--neutro__v1))
+}
+
+.navbar__content__link__cart__button::after,
+.navbar__mobile__cart__button::after {
+    font-size: var(--fs__highlight);
+    color: var(--cta);
+    font-weight: 700;
+    font-family: Rajdhani
+}
+
+.navbar {
+    height: 77px;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--azul__v1), var(--azul__v3));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 var(--spacing__md);
+    gap: var(--spacing__md);
+    position: sticky;
+    top: 0;
+    z-index: 10
+}
+
+.navbar__content__container,
+.navbar__img__container {
+    display: flex;
+    align-items: center;
+    flex: 100%
+}
+
+.navbar__content__container {
+    justify-content: right;
+    gap: var(--spacing__md);
+    max-width: 544px
+}
+
+.navbar__content__link,
+.navbar__mobile__content__link {
+    color: var(--neutro__v1);
+    transition: text-shadow .3s
+}
+
+.navbar__content__link:hover {
+    text-shadow: 0 0 5px var(--neutro__v1)
+}
+
+.navbar__content__link__selected,
+.navbar__mobile__content__link__selected {
+    color: var(--neutro__v3)
+}
+
+.navbar__content__link__cart__button {
+    background: 0 0;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    position: relative
+}
+
+.navbar__content__link__cart__button__icon {
+    color: var(--neutro__v1);
+    fill: var(--neutro__v1);
+    font-size: 1.3rem;
+    transition: filter .3s
+}
+
+.navbar__content__link__cart__button::after {
+    content: attr(data-count);
+    position: absolute;
+    top: -8px;
+    right: -5px
+}
+
+.navbar__mobile__content__container__background {
+    position: fixed;
+    inset: 0;
+    background: #000405cc;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+    z-index: 999
+}
+
+.navbar__mobile__content__container__background__active {
+    opacity: 1;
+    pointer-events: auto
+}
+
+.navbar__mobile__content__container {
+    width: 80%;
+    min-width: 290px;
+    height: 80dvh;
+    background: linear-gradient(to bottom, #b1b1b180 40%, #0e162080 100%);
+    border-radius: 8px;
+    border: 1px solid var(--azul__v2);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 0 5px var(--azul__v2), inset 0 0 12px rgb(from var(--azul__v2) r g b / .7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: var(--spacing__sm);
+    transform: scale(.9) translateY(20px);
+    opacity: 0;
+    transition: transform .3s cubic-bezier(.16, 1, .3, 1), opacity .3s
+}
+
+.navbar__mobile__content__container__active {
+    transform: scale(1) translateY(0);
+    opacity: 1
+}
+
+.navbar__mobile__content__link {
+    display: flex;
+    width: 90%;
+    height: 87px;
+    background: linear-gradient(to bottom, rgb(78, 137, 210, .5), rgb(40, 70, 108, .5));
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    padding: var(--spacing__sm);
+    text-align: center;
+    position: relative;
+    transition: .5s
+}
+
+.navbar__mobile__content__link::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border: 1px solid;
+    pointer-events: none;
+    border-radius: 4px;
+    box-shadow: 0 0 4px #addbff
+}
+
+.navbar__mobile__content__link__ruptura__color {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #4ed27a, #2a0909);
+    z-index: 0;
+    mix-blend-mode: difference;
+    animation: 6s steps(1) infinite glitch-color
+}
+
+.navbar__mobile__content__link__ruptura__image {
+    position: absolute;
+    inset: 0;
+    background-image: url('./images/ruptura de seccion.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    mix-blend-mode: difference;
+    animation: 5s steps(1) infinite glitch-image
+}
+
+.navbar__mobile__content__link__ruptura__text {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    mix-blend-mode: exclusion;
+    user-select: none;
+    animation: 4s steps(1) infinite glitch-text
+}
+
+.navbar__mobile__content__link__rupture::before {
+    content: "";
+    background-image: url("./images/ruptura de seccion.png");
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    filter: contrast(2);
+    border: none;
+    box-shadow: none;
+    inset: 0
+}
+
+.navbar__mobile__content__link__ruptura {
+    pointer-events: none;
+    animation: 2.8s infinite glitch-jitter
+}
+
+.navbar__mobile__content__link__ruptura::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #fff;
+    opacity: 0;
+    z-index: 3;
+    animation: 3.5s steps(1) infinite glitch-scan
+}
+
+.navbar__mobile__content__link__close__menu {
+    background: rgb(9, 21, 42, .8);
+    cursor: pointer
+}
+
+.navbar__mobile__content__link:hover {
+    filter: brightness(1.2)
+}
+
+.navbar__mobile__buttons__container {
+    display: none
+}
+
+.navbar__mobile__bars__button {
+    background: 0 0;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    color: var(--neutro__v1);
+    filter: drop-shadow(0 0 2px var(--neutro__v1));
+    font-size: calc(var(--fs__title__xl) - 2px)
+}
+
+.navbar__mobile__cart__button::after,
+.navbar__mobile__cart__button__icon {
+    filter: drop-shadow(0 0 5px var(--neutro__v1))
+}
+
+.navbar__mobile__cart__button {
+    background: radial-gradient(rgb(201, 202, 207, .25), rgb(68, 170, 250, .25) 70%);
+    border-radius: 50%;
+    border: 1px solid;
+    color: #fff;
+    font-size: var(--fs__title__md);
+    outline: 0;
+    width: 61px;
+    height: 61px;
+    cursor: pointer
+}
+
+.navbar__mobile__cart__button::after {
+    content: attr(data-count);
+    position: absolute;
+    top: 6px;
+    right: 13px
+}
+
+@media screen and (max-width:700px) {
+    .navbar__content__container {
+        display: none
+    }
+
+    .navbar__mobile__buttons__container {
+        display: flex
+    }
+
+    .navbar__mobile__cart__button {
+        position: fixed;
+        bottom: 5%;
+        right: 10%;
+        z-index: 90
+    }
+}
+
+@keyframes glitch-jitter {
+
+    0%,
+    100%,
+    6% {
+        transform: translate(0)
+    }
+
+    2% {
+        transform: translate(-1px, 1px)
+    }
+
+    4% {
+        transform: translate(1px, -2px)
+    }
+}
+
+@keyframes glitch-scan {
+    0% {
+        top: 10%;
+        opacity: 0
+    }
+
+    3% {
+        opacity: .6
+    }
+
+    5% {
+        top: 60%;
+        opacity: .8
+    }
+
+    100%,
+    7% {
+        opacity: 0
+    }
+}
+
+@keyframes glitch-color {
+
+    0%,
+    100%,
+    3% {
+        transform: translate(0)
+    }
+
+    1% {
+        transform: translate(-3px, 0)
+    }
+
+    2% {
+        transform: translate(2px, 1px)
+    }
+}
+
+@keyframes glitch-image {
+
+    0%,
+    100%,
+    4% {
+        filter: none
+    }
+
+    2% {
+        filter: hue-rotate(40deg) contrast(1.4)
+    }
+}
+
+@keyframes glitch-text {
+
+    0%,
+    2% {
+        letter-spacing: normal;
+        opacity: 1
+    }
+
+    1% {
+        letter-spacing: 2px;
+        opacity: .7
+    }
+
+    100% {
+        opacity: 1
+    }
+}

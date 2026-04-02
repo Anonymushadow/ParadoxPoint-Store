@@ -1,0 +1,186 @@
+.category__card:hover>.card__shadow__top,
+.category__card__selected>.card__shadow__top {
+    box-shadow: 0 -15px 30px 2px var(--azul__v3)
+}
+
+.category__card {
+    aspect-ratio: 277.44/166.18;
+    background: url("./images/categories/category background.png") 0 0/cover;
+    filter: drop-shadow(0 0 30px #fff);
+    width: 277.44px;
+    height: 166.18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    opacity: .7
+}
+
+.card__shadow__bottom,
+.card__shadow__top {
+    right: 50%;
+    transform: translateX(50%);
+    width: 90%;
+    height: 10px
+}
+
+.card__shadow__bottom,
+.card__shadow__bottom__left__corner,
+.card__shadow__bottom__right__corner,
+.card__shadow__left,
+.card__shadow__right,
+.card__shadow__top,
+.card__shadow__top__left__corner,
+.card__shadow__top__right__corner {
+    position: absolute
+}
+
+.card__shadow__top {
+    top: 0;
+    background-color: transparent;
+    box-shadow: 0 -5px 20px var(--azul__v3)
+}
+
+.card__shadow__bottom {
+    bottom: 0;
+    background-color: transparent;
+    box-shadow: 0 5px 20px var(--azul__v3)
+}
+
+.card__shadow__left,
+.card__shadow__right {
+    top: 50%;
+    transform: translateY(-50%);
+    height: 90%;
+    width: 10px;
+    background-color: transparent
+}
+
+.card__shadow__left {
+    left: 0;
+    box-shadow: -5px 0 20px var(--azul__v3)
+}
+
+.card__shadow__right {
+    right: 0;
+    box-shadow: 5px 0 20px var(--azul__v3)
+}
+
+.card__shadow__top__left__corner {
+    left: 5px;
+    top: 0;
+    height: 10%;
+    width: 10px;
+    background-color: transparent;
+    transform: rotate(45deg);
+    box-shadow: -5px 0 20px var(--azul__v3)
+}
+
+.card__shadow__bottom__left__corner,
+.card__shadow__top__right__corner {
+    transform: rotate(-45deg);
+    height: 10%;
+    width: 10px;
+    background-color: transparent
+}
+
+.card__shadow__top__right__corner {
+    right: 6px;
+    top: 0;
+    box-shadow: 5px 0 20px var(--azul__v3)
+}
+
+.card__shadow__bottom__left__corner {
+    left: 8px;
+    bottom: 0;
+    box-shadow: -5px 0 20px var(--azul__v3)
+}
+
+.card__shadow__bottom__right__corner {
+    right: 8px;
+    bottom: 0;
+    height: 10%;
+    width: 10px;
+    background-color: transparent;
+    transform: rotate(45deg);
+    box-shadow: 5px 0 20px var(--azul__v3)
+}
+
+.category__card__content__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    padding: 0 5px
+}
+
+.category__card__icon {
+    filter: drop-shadow(0 0 10px rgb(0, 160, 216, .5));
+    width: 52.74px;
+    aspect-ratio: 1/1
+}
+
+.category__card__title {
+    font-size: calc(var(--fs__highlight) - 2px);
+    font-family: var(--font__secondary);
+    color: rgb(68, 170, 250, .7);
+    text-shadow: 0 0 10px rgb(0, 160, 216, .5)
+}
+
+.category__card__description {
+    font-size: calc(var(--fs__detail) - 1px);
+    color: rgb(68, 170, 250, .65);
+    text-shadow: 0 0 rgb(0, 160, 216, .5)
+}
+
+.category__card:hover>.card__shadow__bottom {
+    box-shadow: 0 15px 30px 2px var(--azul__v3)
+}
+
+.category__card:hover>.card__shadow__bottom__left__corner,
+.category__card:hover>.card__shadow__left,
+.category__card:hover>.card__shadow__top__left__corner {
+    box-shadow: -15px 0 30px 2px var(--azul__v3)
+}
+
+.category__card:hover>.card__shadow__bottom__right__corner,
+.category__card:hover>.card__shadow__right,
+.category__card:hover>.card__shadow__top__right__corner {
+    box-shadow: 15px 0 30px 2px var(--azul__v3)
+}
+
+.card__shadow__bottom,
+.card__shadow__bottom__left__corner,
+.card__shadow__bottom__right__corner,
+.card__shadow__left,
+.card__shadow__right,
+.card__shadow__top,
+.card__shadow__top__left__corner,
+.card__shadow__top__right__corner,
+.category__card {
+    transition: .5s
+}
+
+.category__card__selected {
+    opacity: 1
+}
+
+.category__card__selected>.card__shadow__bottom {
+    box-shadow: 0 15px 30px 2px var(--azul__v3)
+}
+
+.category__card__selected>.card__shadow__bottom__left__corner,
+.category__card__selected>.card__shadow__left,
+.category__card__selected>.card__shadow__top__left__corner {
+    box-shadow: -15px 0 30px 2px var(--azul__v3)
+}
+
+.category__card__selected>.card__shadow__bottom__right__corner,
+.category__card__selected>.card__shadow__right,
+.category__card__selected>.card__shadow__top__right__corner {
+    box-shadow: 15px 0 30px 2px var(--azul__v3)
+}

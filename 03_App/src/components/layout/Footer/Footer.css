@@ -1,0 +1,113 @@
+.footer {
+    width: 100%;
+    background: linear-gradient(to bottom, var(--azul__v3), var(--azul__v1));
+    min-height: 178px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing__sm) var(--spacing__lg)
+}
+
+.footer__legal {
+    font-family: var(--font__secondary);
+    font-size: var(--fs__detail);
+    text-align: center;
+    line-height: 29px
+}
+
+.footer__legal__credits__link {
+    position: relative;
+    color: var(--neutro__v4);
+    white-space: nowrap;
+    overflow: visible;
+    cursor: pointer;
+    transition: 1s
+}
+
+.footer__legal__credits__link:hover {
+    color: var(--DWC__color);
+    text-shadow: 0 0 5px var(--DWC__color)
+}
+
+.footer__legal__credits__link:hover::after,
+.footer__legal__credits__link:hover::before {
+    animation-play-state: paused;
+    text-shadow: none;
+    filter: none;
+    opacity: 0
+}
+
+.footer__legal__credits__link::after,
+.footer__legal__credits__link::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    height: 100%;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: 1s
+}
+
+.footer__legal__credits__link::before {
+    text-shadow: -2px 0 var(--DWC__color);
+    animation: 1s linear infinite alternate-reverse glitch-flicker-before;
+    clip-path: inset(0 0 20% 0)
+}
+
+.footer__legal__credits__link::after {
+    text-shadow: 2px 0 var(--DWC__color);
+    animation: 1.2s linear infinite alternate glitch-flicker-after;
+    clip-path: inset(20% 0 0 0)
+}
+
+@keyframes glitch-flicker-before {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translate(0)
+    }
+
+    20% {
+        transform: translateX(-50%) translate(-3px, 1px) skew(-5deg)
+    }
+
+    40% {
+        transform: translateX(-50%) translate(3px, -2px) skew(5deg)
+    }
+
+    60% {
+        transform: translateX(-50%) translate(-2px, 2px) skew(-3deg)
+    }
+
+    80% {
+        transform: translateX(-50%) translate(2px, -2px) skew(3deg)
+    }
+}
+
+@keyframes glitch-flicker-after {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translate(0)
+    }
+
+    20% {
+        transform: translateX(-50%) translate(2px, -1px) skew(4deg)
+    }
+
+    40% {
+        transform: translateX(-50%) translate(-3px, 2px) skew(-4deg)
+    }
+
+    60% {
+        transform: translateX(-50%) translate(3px, -3px) skew(2deg)
+    }
+
+    80% {
+        transform: translateX(-50%) translate(-1px, 1px) skew(-2deg)
+    }
+}

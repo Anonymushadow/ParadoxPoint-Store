@@ -1,0 +1,21 @@
+/* Configuracion para que vsc entienda los alias path de vite */
+{
+    "compilerOptions": {
+      "baseUrl": "src", // Carpeta raiz
+      "paths": {
+        "@components/*": ["components/*"], // @components se mapea a src/components
+        "@styles/*": ["styles/*"], // @styles se mapea a src/styles
+        "@config/*": ["config/*"], // @config se mapea a src/config
+        "@pages/*": ["pages/*"], // @pages se mapea a src/pages
+        "@hooks/*": ["hooks/*"], // @hooks se mapea a src/hooks
+        "@modules/*": ["modules/*"], // @modules se mapea a src/modules
+        "@data/*": ["data/*"], // @data se mapea a src/data
+        "@contexts/*": ["contexts/*"], // @contexts se mapea a src/contexts
+        "@slices/*": ["hooks/*"], // @hooks se mapea a src/hooks
+        "@store/*": ["modules/*"] // @modules se mapea a src/modules
+      }
+    },
+    "include": [
+      "src/**/*"
+    ]
+}

@@ -1,0 +1,65 @@
+/* Selection */
+::selection {
+    background-color: var(--azul__v4);
+    color: var(--neutro__v1)
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Scrollbar */
+/* Webkit: Chrome, Safari, Edge */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+
+/* Thumb: parte del scrollbar que el usuario puede arrastrar */
+::-webkit-scrollbar-thumb {
+    background-color: var(--azul__v3);
+    border-radius: var(--border-radius__sm);
+    border: 2px solid var(--azul__v2)
+}
+
+/* Track: es el fondo donde se mueve el thumb */
+::-webkit-scrollbar-track {
+    background-color: var(--neutro__v1);
+    border-radius: var(--border-radius__sm)
+}
+
+/* Corner: es donde se encuentran los scrollbars horizontales y verticales */
+::-webkit-scrollbar-corner {
+    background-color: var(--neutro__v1)
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Body */
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    background: url("/images/background.png");
+    background-attachment: fixed;
+    color: var(--neutro__v3);
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Contenedor Principal */
+.content__container {
+    display: flex;
+    width: 100%;
+    gap: var(--spacing__lg);
+    flex-direction: column;
+    text-align: center;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, .2);
+    flex: 1;
+}
+
+@media (max-width: 750px) {
+    .content__container {
+        gap: var(--spacing__md)
+    }
+}
+
+body {
+    overflow-x: hidden;
+    width: 100vw;
+}

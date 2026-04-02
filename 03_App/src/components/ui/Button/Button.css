@@ -1,0 +1,25 @@
+.button__cta {
+    font-family: var(--font__secondary);
+    background: linear-gradient(to bottom, #addbff, var(--azul__v3));
+    color: var(--neutro__v1);
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 15px;
+    font-weight: 700;
+    transition: box-shadow .3s
+}
+
+.button__cta:hover {
+    box-shadow: 0 0 10px #fff
+}
+
+.button__medium {
+    width: 193px;
+    height: 51px
+}
+
+.button__small {
+    width: clamp(138px, calc(136.41px + .5vw), 143px);
+    aspect-ratio: 143/41
+}
