@@ -120,7 +120,7 @@
 
 .category__card__icon {
     filter: drop-shadow(0 0 10px rgb(0, 160, 216, .5));
-    width: 52.74px;
+    max-width: 52.74px;
     aspect-ratio: 1/1
 }
 

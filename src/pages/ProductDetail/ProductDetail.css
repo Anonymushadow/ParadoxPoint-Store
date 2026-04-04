@@ -83,12 +83,15 @@
     display: flex;
     gap: var(--spacing__sm);
     justify-content: space-evenly;
+    overflow: auto;
+    max-width: 500px;
 }
 
 .product__detail__box__principal__information__images__list__item {
     flex: 1;
     max-height: 116px;
     max-width: 116px;
+    min-width: 80px;
     aspect-ratio: 1/1;
     border-radius: 10px;
     border: 1px solid var(--azul__v2);
