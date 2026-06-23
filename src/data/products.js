@@ -9,7 +9,7 @@ export const productsList = [
         descriptionTitle: "Fragancia que transforma tu espacio",
         description: "Difusor de aromas con esencia cítrica de limón que refresca y da vida a cualquier ambiente. Perfecto para salas, oficinas o dormitorios.",
         images: [
-            "Difusor Citric Lemon.png",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfxmruypVADvCOyFA95J_UXUsS-r7IAuhHNA&s",
             "Difusor Citric Lemon 2.png",
             "Difusor Citric Lemon 3.png"
         ],
@@ -20,7 +20,8 @@ export const productsList = [
             "Usos: Ambientes"
         ],
         number: 5491168129047,
-        seller: "Nahuel"
+        seller: "Nahuel",
+        sellerID: "Li0TePjJsnOKNGhFBD2ktvyK6pM2"
     },
     {
         id: "RmatGsR8_V5j7Hi00-myT",
@@ -39,7 +40,8 @@ export const productsList = [
             "Usos: Ambientes"
         ],
         number: 5491168129047,
-        seller: "Nahuel"
+        seller: "Nahuel",
+        sellerID: "Li0TePjJsnOKNGhFBD2ktvyK6pM2"
     },
     {
         id: "V1StGXRZ5jdHi6B-myT",
@@ -58,7 +60,8 @@ export const productsList = [
             "Usos: Ambientes, Vehículos"
         ],
         number: 5491168129047,
-        seller: "Nahuel"
+        seller: "Nahuel",
+        sellerID: "Li0TePjJsnOKNGhFBD2ktvyK6pM2"
     },
     {
         id: "V1StGXR8_Z5jdHi6B-myT",
@@ -81,7 +84,8 @@ export const productsList = [
             "Usos: Ambientes, Ropa"
         ],
         number: 5491168129047,
-        seller: "Pablo"
+        seller: "Pablo",
+        sellerID: "nfdonfdods"
     },
     {
         id: "V1StGXR8_Z5jd6B-myT",
@@ -104,12 +108,9 @@ export const productsList = [
             "Usos: Ambientes"
         ],
         number: 5491168129047,
-        seller: "Nahuel"
+        seller: "Nahuel",
+        sellerID: "Li0TePjJsnOKNGhFBD2ktvyK6pM2"
     },
-
-
-
-
     {
         id: "lmr6mdxhng-myT",
         name: "Botas de cuero vacuno",
@@ -128,7 +129,8 @@ export const productsList = [
             "Material: Cuero Vacuno genuino"
         ],
         number: 5491168129047,
-        seller: "Cecilia"
+        seller: "Cecilia",
+        sellerID: "oodospids"
     },
     {
         "id": "lmr6mdhng-myT",
@@ -170,7 +172,8 @@ export const productsList = [
             "Servicios: Agua, luz, gas natural, internet"
         ],
         "number": 5491168129047,
-        "seller": "Ruben"
+        "seller": "Ruben",
+        sellerID: "ññsñld"
     },
     {
         "id": "xlr699hng-myT",
@@ -205,7 +208,8 @@ export const productsList = [
             "Estado: Usado / Funcionando"
         ],
         "number": 5491168129047,
-        "seller": "Nahuel"
+        "seller": "Nahuel",
+        sellerID: "Li0TePjJsnOKNGhFBD2ktvyK6pM2"
     }
 ]
 

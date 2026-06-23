@@ -41,7 +41,12 @@
 .navbar__content__link,
 .navbar__mobile__content__link {
     color: var(--neutro__v1);
-    transition: text-shadow .3s
+    transition: text-shadow .3s;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: var(--fs__text);
 }
 
 .navbar__content__link:hover {
@@ -98,7 +103,7 @@
 .navbar__mobile__content__container {
     width: 80%;
     min-width: 290px;
-    height: 80dvh;
+    height: 95dvh;
     background: linear-gradient(to bottom, #b1b1b180 40%, #0e162080 100%);
     border-radius: 8px;
     border: 1px solid var(--azul__v2);

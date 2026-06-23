@@ -1,13 +1,16 @@
 import "./CartMenu.css";
-import { useSelector, useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import { removeItem, deleteOneItem, addOneItem } from "@slices/cartSlice";
+import { useUiStore } from "../../../store/uiStore";
+import { useCartStore } from "../../../store/cartStore";
 
 export const CartMenu = () => {
-    const { openedCart } = useSelector(state => state.ui);
-    let { items, totalPrice } = useSelector(state => state.cart);
-    const dispatch = useDispatch();
+    const openedCart = useUiStore(state => state.openedCart);
+    const totalPrice = useCartStore(state => state.totalPrice);
+    const items = useCartStore(state => state.items);
+    const removeItem = useCartStore(state => state.removeItem);
+    const deleteOneItem = useCartStore(state => state.deleteOneItem);
+    const addOneItem = useCartStore(state => state.addOneItem);
 
     // === FUNCION PARA CONFIRMAR PEDIDO ===
     const handleConfirmPedido = () => {
@@ -72,22 +75,26 @@ export const CartMenu = () => {
                                 <div key={index} className="navbar__cart__content__product">
                                     <div className="navbar__cart__content__product__structure">
                                         <div className="navbar__cart__content__product__image__container">
-                                            <img src={`/images/products/${item.images[0]}`} alt="" className="navbar__cart__content__product__image" />
+                                            <img src={item.images[0]} alt="" className="navbar__cart__content__product__image" />
                                         </div>
                                         <div className="navbar__cart__content__product__description">
                                             <div className="navbar__cart__content__product__title__container">
                                                 <h2 className="navbar__cart__content__product__title">{item.name}</h2>
                                             </div>
-                                            <div className="navbar__cart__content__product__quantity__container">
-                                                <span className="navbar__cart__content__product__quantity__price">${item.totalItemPrice.toLocaleString("es-AR")}</span>
-                                                <div className="navbar__cart__content__product__quantity__manager">
-                                                    <button className="navbar__cart__content__product__quantity__extract__btn" onClick={() => dispatch(deleteOneItem(item.id))}>-</button>
-                                                    <span className="navbar__cart__content__product__quantity">{item.quantity}</span>
-                                                    <button className="navbar__cart__content__product__quantity__add__btn" onClick={() => dispatch(addOneItem(item.id))}>+</button>
-                                                </div>
-                                            </div>
+                                            { 
+                                                item.category.toLowerCase() !== "servicios" && (
+                                                    <div className="navbar__cart__content__product__quantity__container">
+                                                        <span className="navbar__cart__content__product__quantity__price">${item.totalItemPrice.toLocaleString("es-AR")}</span>
+                                                        <div className="navbar__cart__content__product__quantity__manager">
+                                                            <button className="navbar__cart__content__product__quantity__extract__btn" onClick={() => deleteOneItem(item.id)}>-</button>
+                                                            <span className="navbar__cart__content__product__quantity">{item.quantity}</span>
+                                                            <button className="navbar__cart__content__product__quantity__add__btn" onClick={() => addOneItem(item.id)}>+</button>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            }
                                         </div>
-                                        <div className="navbar__cart__content__product__delete__button__container" onClick={() => dispatch(removeItem(item.id))}>
+                                        <div className="navbar__cart__content__product__delete__button__container" onClick={() => removeItem(item.id)}>
                                             <FontAwesomeIcon icon={faTrashCan} className="navbar__cart__content__product__delete__button__icon" />
                                         </div>
                                     </div>

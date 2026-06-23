@@ -1,0 +1,13 @@
+.figma-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 999999;
+  pointer-events: none;
+
+
+  background-image: url("/images/references/1.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+}

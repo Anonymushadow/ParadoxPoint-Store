@@ -10,7 +10,7 @@ export const ProductCard = ({ id, image = ["./images/Go-Busters-StagBuster.png"]
                 <div className="product__card__front">
                     <div
                         className="product__card__img__container"
-                        style={{ backgroundImage: `url("./images/products/${image[0]}")` }}
+                        style={{ backgroundImage: `url("${image[0]}")` }}
                     ></div>
                     <div className="product__card__name__container">{title}</div>
                 </div>

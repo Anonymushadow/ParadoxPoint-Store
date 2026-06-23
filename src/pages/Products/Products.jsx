@@ -1,16 +1,16 @@
 import "./Products.css";
-import { ProductsCards } from "@components/layout/Products/ProductsCards/ProductsCards";
-import { ProductsCategories } from "@components/layout/Products/ProductsCategories/ProductsCategories";
+import { ProductsCards } from "@components/features/Products/ProductsCards/ProductsCards";
+import { ProductsCategories } from "@components/features/Products/ProductsCategories/ProductsCategories";
 import { useMemo, useState } from "react";
-import { useSelector } from "react-redux";
 import { SearchBar } from "@components/features/Products/SearchBar/SearchBar";
 import { ScrollToTopBtn } from "@components/ui/ScrollToTopBtn/ScrollToTopBtn";
+import { useProductsStore } from "../../store/productsStore";
 
 export const Products = () => {
     const [search, setSearch] = useState("");
     const [selected, setSelected] = useState([]);
 
-    const products = useSelector(state => state.products);
+    const products = useProductsStore(state => state.productos);
 
     /* Filtro de productos */
     const productsToShow = useMemo(() => {

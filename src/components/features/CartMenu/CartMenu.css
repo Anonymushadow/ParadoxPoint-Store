@@ -68,7 +68,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 160px;
+    height: 180px;
     width: 100%;
     position: relative
 }
@@ -85,10 +85,11 @@
 }
 
 .navbar__cart__content__product__structure {
-    width: 80%;
-    height: 80px;
+    width: 82%;
+    min-height: 80px;
     display: flex;
-    align-items: center
+    align-items: center;
+    gap: var(--spacing__sm);
 }
 
 .navbar__cart__content__product__image__container {

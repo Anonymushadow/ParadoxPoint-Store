@@ -2,15 +2,28 @@ import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faCartShopping } from '@fortawesome/free-solid-svg-icons'
-import { useSelector, useDispatch } from "react-redux";
-import { toggleMenu, forceToggleMenu, toggleCart, forceToggleCart } from "@slices/uiSlice.js";
 import { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { CartMenu } from "@components/features/CartMenu/CartMenu";
+import { useCartStore } from "@store/cartStore";
+import { useUiStore } from "@store/uiStore";
+import { useUserStore } from "@store/userStore";
+import { useLogout } from "@hooks/auth/logout";
 
 export const Navbar = () => {
-    let totalItems = useSelector(state => state.cart.totalQuantity);
-    const { openedMenu } = useSelector(state => state.ui);
-    const dispatch = useDispatch();
+    const totalItems = useCartStore(state => state.totalQuantity);
+    const toggleMenu = useUiStore(state => state.toggleMenu);
+    const toggleCart = useUiStore(state => state.toggleCart);
+    const forceToggleMenu = useUiStore(state => state.forceToggleMenu);
+    const openedMenu = useUiStore(state => state.openedMenu);
+    const user = useUserStore(state => state.user);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const logoutUser = useLogout();
+
+    const isLoginActive = location.pathname === "/login";
+    const hiddenCartRoutes = ["/login", "/admin"];
+    const hideCart = hiddenCartRoutes.includes(location.pathname);
 
     // Verificar si estamos en ese link
     const verifyLink = (isActive, isMobile) => {
@@ -27,29 +40,37 @@ export const Navbar = () => {
             return openedMenu ? "navbar__mobile__content__container__background navbar__mobile__content__container__background__active" : "navbar__mobile__content__container__background";
         } else if (type === "menu") {
             return openedMenu ? "navbar__mobile__content__container navbar__mobile__content__container__active" : "navbar__mobile__content__container";
-        } else if (type === "cart") {
-            return openedMenu ? "" : "";
-        }
+        } 
     }
 
     const handleMenuButton = () => {
-        dispatch(toggleMenu());
+        toggleMenu();
     }
     
     const handleCartButton = ()=> {
-        dispatch(toggleCart());
+        toggleCart();
     }
 
     // Manejar el click de un navlink en mobile
     const handleMenuSelection = () => {
-        dispatch(forceToggleMenu(false));
+        forceToggleMenu(false);
     }
 
-    // Cerrar menu mobile si cambiamos a desktop
+    const handleLogin = () => {
+        handleMenuSelection();
+
+        if (user) {
+            logoutUser();
+        } else {
+            navigate("/login");
+        }
+    }
+
+    // Cerrar menu mobile si cambiamos a desktop 
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 700) {
-                dispatch(forceToggleMenu(false));
+                forceToggleMenu(false);
             }
         };
 
@@ -68,9 +89,26 @@ export const Navbar = () => {
             <div className="navbar__content__container">
                 <NavLink to="/" className={(data) => verifyLink(data.isActive, false)}>Inicio</NavLink>
                 <NavLink to="/productos" className={(data) => verifyLink(data.isActive, false)}>Productos</NavLink>
-                <button className="navbar__content__link navbar__content__link__cart__button" data-count={totalItems} onClick={handleCartButton}>
-                    <FontAwesomeIcon icon={faCartShopping} className="navbar__content__link__cart__button__icon" />
-                </button>
+                <button className={verifyLink(isLoginActive, false)} onClick={handleLogin}>{user ? "Salir" : "Ingresar"}</button>
+                {
+                    user && (
+                        <NavLink to="/admin" className={(data) => verifyLink(data.isActive, false)}>Admin</NavLink>
+                    )
+                }
+                {
+                    !hideCart && (
+                        <button
+                            className="navbar__content__link navbar__content__link__cart__button"
+                            data-count={totalItems}
+                            onClick={handleCartButton}
+                        >
+                            <FontAwesomeIcon
+                                icon={faCartShopping}
+                                className="navbar__content__link__cart__button__icon"
+                            />
+                        </button>
+                    )
+                }
             </div>
 
             {/* Navbar content mobile */}
@@ -78,20 +116,32 @@ export const Navbar = () => {
                 <div className={defineClases("menu")}>
                     <NavLink to="/" className={(data) => verifyLink(data.isActive, true)} onClick={handleMenuSelection}>01 INICIO</NavLink>
                     <NavLink to="/productos" className={(data) => verifyLink(data.isActive, true)} onClick={handleMenuSelection}>02 PRODUCTOS</NavLink>
-                    <div className="navbar__mobile__content__link navbar__mobile__content__link__ruptura">
-                        <span className="navbar__mobile__content__link__ruptura__color"></span>
-                        <span className="navbar__mobile__content__link__ruptura__image"></span>
-                        <span className="navbar__mobile__content__link__ruptura__text">0x00 RUPTURA TEMPORAL EN ARREGLO</span>
-                    </div>
+                    <button className={verifyLink(isLoginActive, true)} onClick={handleLogin}>03 {user ? "SALIR DEL SISTEMA" : "ENTRAR AL SISTEMA"}</button>
+                    {
+                        user && (
+                            <NavLink to="/admin" className={(data) => verifyLink(data.isActive, true)} onClick={handleMenuSelection}>04 ADMIN</NavLink>
+                        )
+                    }
                     <div className="navbar__mobile__content__link navbar__mobile__content__link__close__menu" onClick={handleMenuButton}>00 CERRAR MENU</div>
                 </div>
             </div>
 
             {/* Boton carrito y menu para mobile */}
             <div className="navbar__mobile__buttons__container">
-                <button className="navbar__mobile__cart__button" data-count={totalItems} onClick={handleCartButton}>
-                    <FontAwesomeIcon icon={faCartShopping} className="navbar__mobile__cart__button__icon" />
-                </button>
+                {
+                    !hideCart && (
+                        <button
+                            className="navbar__mobile__cart__button"
+                            data-count={totalItems}
+                            onClick={handleCartButton}
+                        >
+                            <FontAwesomeIcon
+                                icon={faCartShopping}
+                                className="navbar__mobile__cart__button__icon"
+                            />
+                        </button>
+                    )
+                }
                 <button className="navbar__mobile__bars__button" onClick={handleMenuButton}>
                     <FontAwesomeIcon icon={faBars} className="navbar__mobile__bars__button__icon" />
                 </button>
@@ -99,6 +149,17 @@ export const Navbar = () => {
 
             {/* Carrito de compras */}
             <CartMenu />
+            
         </nav>
     );
 }
+
+
+
+/*
+<div className="navbar__mobile__content__link navbar__mobile__content__link__ruptura">
+                        <span className="navbar__mobile__content__link__ruptura__color"></span>
+                        <span className="navbar__mobile__content__link__ruptura__image"></span>
+                        <span className="navbar__mobile__content__link__ruptura__text">0x00 RUPTURA TEMPORAL EN ARREGLO</span>
+                    </div>
+*/

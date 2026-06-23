@@ -1,0 +1,41 @@
+.floatting__admin__cancel__button::after,
+.floatting__admin__cancel__button__icon,
+.floatting__admin__save__button::after,
+.floatting__admin__save__button__icon {
+    filter: drop-shadow(0 0 5px var(--neutro__v1));
+}
+
+.floatting__admin__cancel__button,
+.floatting__admin__save__button {
+    background: radial-gradient(rgb(201, 202, 207, .25), rgb(68, 170, 250, .25) 70%);
+    border-radius: 50%;
+    border: 1px solid;
+    color: #fff;
+    font-size: var(--fs__title__md);
+    outline: 0;
+    width: 61px;
+    height: 61px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 5%;
+    z-index: 90
+}
+
+.floatting__admin__save__button {
+    bottom: 5%;
+}
+
+.floatting__admin__cancel__button {
+    bottom: 20%;
+}
+
+.floatting__admin__save__button::after,
+.floatting__admin__cancel__button::after {
+    content: attr(data-count);
+    position: absolute;
+    top: 6px;
+    right: 13px
+}

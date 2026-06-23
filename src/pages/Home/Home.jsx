@@ -1,9 +1,9 @@
 import "./Home.css";
-import { HomeHeader } from "@components/layout/Home/Header/HomeHeader";
-import { HomeAbout } from "@components/layout/Home/HomeAbout/HomeAbout";
-import { HomeProductsSection } from "@components/layout/Home/HomeProductsSection/HomeProductsSection";
-import { HomeCategoriesSection } from "@components/layout/Home/HomeCategoriesSection/HomeCategoriesSection";
-import { HomeGlitchSection } from "@components/layout/Home/HomeGlitchSection/HomeGlitchSection";
+import { HomeHeader } from "@components/features/Home/Header/HomeHeader";
+import { HomeAbout } from "@components/features/Home/HomeAbout/HomeAbout";
+import { HomeProductsSection } from "@components/features/Home/HomeProductsSection/HomeProductsSection";
+import { HomeCategoriesSection } from "@components/features/Home/HomeCategoriesSection/HomeCategoriesSection";
+import { HomeGlitchSection } from "@components/features/Home/HomeGlitchSection/HomeGlitchSection";
 
 export const Home = () => {
 

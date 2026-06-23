@@ -1,21 +1,15 @@
 📁 Proyect folder/
-├──    📁 public/
+├─── 📁 public/
 |        └── 📁 images/
 |        └── 📁 videos/
 |        └── 📁 icons/
 |        └── favicon.ico
 |        
-|    📁 src/
+├─── 📁 src/
 |    │
 |    ├── 📁 store/
 |    │   ├── store.js
 |    │   └── rootReducer.js   (opcional si querés separar rootReducer)
-|    │
-|    ├── 📁 slices/
-|    │   ├── userSlice.js
-|    │   ├── uiSlice.js
-|    │   ├── authSlice.js
-|    │   └── etc...
 |    |
 |    ├── 📁 components/
 |    |    ├── 📁 effects/

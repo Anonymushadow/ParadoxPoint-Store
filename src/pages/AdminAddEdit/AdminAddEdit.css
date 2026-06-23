@@ -1,0 +1,5 @@
+.admin__add__edit__section {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
